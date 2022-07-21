@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - OpenPlayerJS - Fully customized player</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.10.0/css/all.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/openplayerjs@2.1.2/dist/openplayer.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h2>Fully customized audio player</h2>
+<p>This demo involves more CSS than usual to achieve the desired results, but shows the flexibility of OpenPlayerJS to place elements properly and modify the regular DOM.</p> 
+<div class="audio-player">
+  <img class="cover">
+  <audio class="op-player__media" id="audio" controls playsinline src="https://db2.indexcom.com/bucket/ram/00/05/64k/05.m3u8"></audio>
+</div>
+<br>
+<div class="audio-player live">
+  <img class="cover" src="https://ctl.s6img.com/society6/img/7eMZqEa9RHkjy7he9uiOWoCCMeU/w_700/posters/18x24/front/~artwork,fw_2718,fh_3618,fx_-450,iw_3618,ih_3618/s6-original-art-uploads/society6/uploads/misc/20010436db00425db80e923d85c57278/~~/urban-vinyl-of-underground-music-posters.jpg?wait=0&attempt=0" alt="Radio">
+  <audio class="op-player__media" id="audio-live" controls>
+    <source src="https://stream.playerlive.info:8021/HRVC.aac">
+</audio>
+</div>
+<p>If you like this Pen, please show your support to this project by giving it a star by clicking in the icon below.</p>
+<a class="github-button" href="https://github.com/openplayerjs/openplayerjs" data-size="large" data-show-count="true" aria-label="Star openplayerjs/openplayerjs on GitHub">Star</a>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/openplayerjs@2.1.2/dist/openplayer.min.js'></script>
+<script src='https://buttons.github.io/buttons.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
