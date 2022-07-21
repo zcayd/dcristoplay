@@ -1,0 +1,60 @@
+/* ===== TAB INFO ===== */
+.tabs {
+border-radius: 0px 0px 30px 30px;
+width: 100%;
+max-width: 900px;
+height: 120px;
+padding: 5px;
+margin:auto;
+border-color:  var(--color-primary);
+border-width: 5px;
+border-style: solid;
+box-shadow: #000 0px 0px 5px 0px;
+}
+ul#tabs-nav {
+list-style: none;
+margin: 0;
+padding: 5px;
+overflow: auto;
+}
+ul#tabs-nav li {
+float: left;
+font-weight: bold;
+margin-right: 2px;
+border-radius: 7px;
+border: 2px solid var(--color-primary-100);
+border-bottom: none;
+cursor: pointer;
+}
+ul#tabs-nav li:hover,
+ul#tabs-nav li.active {
+background-color:var(--color-primary-dark);
+}
+#tabs-nav li a {
+text-decoration: none;
+}
+.tab-content {
+padding: 10px;
+}
+.shared {
+display: inline-block;
+width: 45px;
+height: 45px;
+margin: 2px 0;
+padding: 0;
+margin-right: 2px;
+cursor: pointer;
+border-radius: 50%;
+}
+.shared:hover{
+opacity: 0.9;
+}
+.iconos-sociales img{
+transition:all 0.5s ease-out;
+}
+.iconos-sociales img:hover{
+box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+transform:translate(0px, -5px);
+}
+/* ===== TAB INFO FIN ===== */
+

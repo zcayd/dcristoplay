@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="es-PE" >
+<head>
+  <meta charset='UTF-8' />
+  <title>DCRISTO PLAY</title>
+  <meta name="description" content="Contenido Cristiano, Pagina Web Cristiana, Sitio Web cristiano, Aqui puedes ver escuchar predeicas cristianas, ver television cristianas, escuchar radios cristianas, ver peliculas cristianas online, descargar libros cristianos y encontrar mucho mas recursos para dar la gloria a Dios">
+  <meta name="keywords" content="web de recursos cristianos, recursos cristianos, pagina web cristiana, sitio web, pagina web cristiana, WEB DE RECURSOS CRISTIANOS">
+  <meta name="author" content="AZEA PROJECTS" />
+  <meta name="copyright" content="© 2022 DCristoPlay">
+  <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2PrI2osGycyFzXuDWixLgyJfnJoqhvP8nlA92dYStFK8lg3SdzUyHVFi65nzAM9TptNchogByr-qRIctc0sCPLO60_N3XLwlGJKhzxU1LRGudnjXujVu5Uj80UYKHx0GsqYD5717kwn9U1s8bczDIFYMraHokOQMYH_vUljAK2y4jHrV9Mo_GxhJU/s1600/Ico.RC.256.png" />
+  <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport' />
+  <meta content='IE=edge' http-equiv='X-UA-Compatible' />
+  <meta content='max-image-preview:large' name='robots' />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://use.fontawesome.com/releases/v5.3.1/css/all.css' rel='stylesheet' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css'>
+  <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+ 
+
+  <link rel='stylesheet' href='https://necolas.github.io/normalize.css/latest/normalize.css'>
+  <link rel="stylesheet" href="./css/style.css">
+
+
+  <script>
+    !window.jQuery && document.write("<script src='js/jquery.min.js'><\/scrip>")
+  </script>
+  <script src="js/jquery.flexslider.js"></script>
+  <script>
+    $(window).load(function() {
+      $(".flexslider").flexslider();
+    });
+  </script>
+
+
+</head>
+<body >
+<!-- partial:index.partial.html -->
+<div x-data="setup()" x-init="$refs.loading.classList.add('hidden'); setColors(color);" :class="{ 'dark': isDark}">
+  <div class="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
+    <!----- PANTALLA DE CARGA ----->
+    <div x-ref="loading" class="fixed inset-0 z-50 flex items-center justify-center text-2xl font-semibold text-white bg-primary-darker">
+      Cargando.....
+    </div>
+
+
+
+    <!-- SIDEBAR - MENU --------------------------------------------------------------------------------------------------->
+    <aside class="aside position-fixed flex-shrink-0 hidden w-64 bg-white border-r dark:border-primary-darker dark:bg-darker md:block" >
+      <div class="flex flex-col h-full">
+        <!----- PANTALLA COMPLETA MODO PC ----->
+        <!--- SIDEBAR LINKS -->
+        <nav aria-label="Main" class="flex-1 px-2 py-4 space-y-2 ">
+          <!-- INICIO LINK -->
+          <div
+          x-data="{ isActive: true, open: true}">
+            <!-- active & hover classes 'bg-primary-100 dark:bg-primary' -->
+            <a href="./index.html"
+              class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-primary-100 dark:hover:bg-primary"
+              :class="{'bg-primary-100 dark:bg-primary': isActive || open}"
+              role="button"
+              aria-haspopup="true"
+              :aria-expanded="(open || isActive) ? 'true' : 'false'">
+              <span class="iconify" data-icon="fa-solid:home"></span>
+              <span class="ml-2 text-sm font-semibold"> Inicio </span>
+            </a>
+            <div role="menu" x-show="open" class="mt-2 space-y-2 px-7" aria-label="Dashboards">
+            </div>
+          </div>
+          <!-- PREDICAS LINKS -->
+          <div x-data="{ isActive: false, open: false }">
+            <a href="#"
+              @click="$event.preventDefault(); open = !open"
+              class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-primary-100 dark:hover:bg-primary"
+              :class="{ 'bg-primary-100 dark:bg-primary': isActive || open }"
+              role="button"
+              aria-haspopup="true"
+              :aria-expanded="(open || isActive) ? 'true' : 'false'">
+              <span aria-hidden="true">
+                <span class="iconify" data-icon="ic:baseline-record-voice-over"></span>
+              </span>
+              <span class="ml-2 text-sm font-semibold"> Predicas </span>
+              <span aria-hidden="true" class="ml-auto">
+                <!-- active class 'rotate-180' -->
+                <svg class="w-4 h-4 transition-transform transform":class="{ 'rotate-180': open }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </a>
+            <div x-show="open" class="mt-2 space-y-2 px-7" role="menu" arial-label="Components">
+              <a href="./predicas_yiye.html" role="menuitem" class="block p-2 text-gray-700 dark:text-light">
+                Yiye Avila
+              </a>
+              <a href="#" role="menuitem" class="block p-2 text-gray-700 dark:text-light">
+                Yiye Avila
+              </a>
+              <a href="#" role="menuitem" class="block p-2 text-gray-700 dark:text-light">
+                Yiye Avila
+              </a>
+            </div>
+          </div>
+          <!-- RADIOS CRISTIANAS LINKS -->
+          <div x-data="{ isActive: false, open: false }">
+            <a href="#"
+              @click="$event.preventDefault(); open = !open"
+              class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-primary-100 dark:hover:bg-primary"
+              :class="{ 'bg-primary-100 dark:bg-primary': isActive || open }"
+              role="button"
+              aria-haspopup="true"
+              :aria-expanded="(open || isActive) ? 'true' : 'false'">
+              <span aria-hidden="true">
+                <span class="iconify" data-icon="bi:music-note-list"></span>
+              </span>
+              <span class="ml-2 text-sm font-semibold"> Radios Cristianas </span>
+              <span aria-hidden="true" class="ml-auto">
+                <!-- active class 'rotate-180' -->
+                <svg class="w-4 h-4 transition-transform transform":class="{ 'rotate-180': open }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </a>
+            <div x-show="open" class="mt-2 space-y-2 px-7" role="menu" arial-label="Components">
+              <a href="#" role="menuitem" class="block p-2 text-gray-700 dark:text-light">
+                Todas
+              </a>
+              <a href="#" role="menuitem" class="block p-2 text-gray-700 dark:text-light">
+                Por Paises
+              </a>
+              <a href="#" role="menuitem" class="block p-2 text-gray-700 dark:text-light">
+                Zona Niños
+              </a>
+            </div>
+          </div>
+          <br>
+          <br>
+          <!-- SIDEBAR FOOTER -->
+          <div class="text-sm font-semibold">
+            <div class="modal-footer">
+              <div class="container-footer">
+                <footer>
+                  <div class="redes-footer">
+                    <a href="https://www.facebook.com/DCristoPlay/"><i class="fab fa-facebook-f icon-redes-footer"></i></a>
+                    <a href="https://t.me/DCristo_Play"><i class="fa fa-paper-plane icon-redes-footer"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp icon-redes-footer"></i></a>
+                    <a href="#"><i class="fab fa-google icon-redes-footer"></i></a>
+                  </div>
+                </footer>
+              </div>
+            </div>
+            <button @click="openSettingsPanel"
+              type="button"
+              class="flex items-center justify-center w-full px-4 py-2 text-sm text-white rounded-md bg-primary hover:bg-primary-dark focus:outline-none focus:ring focus:ring-primary-dark focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark">
+              <span aria-hidden="true">
+                <span class="iconify" data-icon="ion:settings-sharp"></span>
+              </span>
+              <span  class="text-sm font-semibold">  AJUSTES  </span>
+            </button>
+          </div>
+          <br>
+
+        </nav>
+
+      </div>
+    </aside>
+
+    <div class="flex-1 h-full overflow-x-hidden overflow-y-auto">
+      <!-- NAVBAR -->
+      <header class="bg-white dark:bg-darker" id="header">
+
+        <div class="icon-nav relative bg-white dark:bg-darker flex items-center justify-between p-2 border-b dark:border-primary-darker">
+          <!----- MENU MOVIL BOTONES ----->
+          <button
+            @click="isMobileMenuOpen = !isMobileMenuOpen"
+            class="p-1 transition-colors duration-200 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark md:hidden focus:outline-none focus:ring">
+          <span class="iconify" data-icon="typcn:th-menu"></span>
+          </button>
+          <!----- LOGO CABECERA ----->
+            <center>
+              <div class="inline-block text-2xl font-bold tracking-wider uppercase text-primary-dark dark:text-light">
+               <img class="azealog" src="https://blogger.googleusercontent.com/img/a/AVvXsEgEmLELwuY28B4X3SbugmzGaBQ25N9lKuerBubG84tiamgxWBnigcPoLD8vkFi_gQTHhPWqbNl_HKwfDizM0Y1FNAhZbJz3VstfDRn3hPsnMzn6C9pYbv3mjNG4jYh86C5_3H5BO6PUOyX8iyTgtZI716Gj3JEsvtVWAayQeQSXrj3VjLSgaZb3PvpI=s16000" alt="DCristo Play">
+              </div>
+            </center>          
+          <!-- BOTON BUSQUEDA -->
+          <button
+          @click="openSearchPanel"
+          class="p-1 transition-colors duration-200 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark md:hidden focus:outline-none focus:ring">
+          <span class="iconify" data-icon="fa-solid:search"></span>
+        </button>
+          <!----- SUB MENU MOVIL ----->
+          <button
+            @click="isMobileSubMenuOpen = !isMobileSubMenuOpen"
+            class="p-1 transition-colors duration-200 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark md:hidden focus:outline-none focus:ring">
+            <span aria-hidden="true">
+              <span class="iconify" data-icon="charm:menu-kebab"></span>
+            </span>
+          </button>
+          <!--- BOTONES SUPERIORES DERECHA --->
+          <!----- SUB MENU PANTALLA COMPLETA PC  ----->
+          <nav aria-label="Secondary" class="hidden space-x-5 md:flex md:items-center">
+            <!-- BOTON DE COLOR DE TEMA -->
+            <button aria-hidden="true" class="relative focus:outline-none" x-cloak @click="toggleTheme" >
+              <div class="w-16 h-9 transition rounded-full outline-none bg-primary-100 dark:bg-primary-lighter" style="border: #ffffff 2px solid"></div>
+              <div
+              style="border: #ffffff 2px solid"
+                class="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-10 transition-all duration-150 transform scale-100 rounded-full shadow-sm"
+                :class="{ 'translate-x-0 -translate-y-px  bg-white text-primary-dark': !isDark, 'translate-x-6 text-primary-lighter bg-primary-darker': isDark }">                
+                <span class="iconify" x-show="!isDark" data-icon="noto:sun"></span>              
+                <span class="iconify"  x-show="isDark" data-icon="noto:crescent-moon"></span>                
+              </div>
+            </button>
+            <!-- BOTON NOTIFICACION -->
+            <button
+              @click="openNotificationsPanel"
+              class="p-2 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker">
+              <span class="iconify" data-icon="zondicons:notifications"></span>
+            </button>
+            <!-- BOTON BUSQUEDA -->
+            <button
+              @click="openSearchPanel"
+              class="p-2 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker">
+              <span class="iconify" data-icon="fa-solid:search"></span>
+            </button>
+            <!-- BOTON AJUSTES -->
+            <button
+              @click="openSettingsPanel"
+              class="p-2 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker">
+              <span class="iconify" data-icon="ion:settings-sharp"></span>
+            </button>
+          </nav>
+          <!----- SUB MENU MOVIL  ----->     
+          <nav
+            x-transition:enter=" transition duration-200 ease-in-out transform sm:duration-500"
+            x-transition:enter-start="-translate-y-full opacity-0"
+            x-transition:enter-end="translate-y-0 opacity-100"
+            x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
+            x-transition:leave-start="translate-y-0 opacity-100"
+            x-transition:leave-end="-translate-y-full opacity-0"
+            x-show="isMobileSubMenuOpen"
+            @click.away="isMobileSubMenuOpen = false"            
+            class="top-nav absolute flex  items-center justify-around bg-primary border-primary-dark rounded-md shadow-lg dark:bg-darker inset-x-5 "
+            style="border: rgba(20, 20, 20, 0.3) 2px solid"
+            aria-label="Secondary">
+            <div class="space-x-2 md:flex md:items-center">
+              <!-- BOTON DE COLOR DE TEMA -->
+              <button aria-hidden="true" class="relative focus:outline-none top-1" x-cloak @click="toggleTheme" >
+                <div class=" w-16 h-9 transition rounded-full outline-none bg-primary-100 dark:bg-primary-lighter" style="border: #ffffff 2px solid"></div>
+                <div
+                style="border: #ffffff 2px solid"
+                  class="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-10 transition-all duration-150 transform scale-100 rounded-full shadow-sm"
+                  :class="{ 'translate-x-0 -translate-y-px  bg-white text-primary-dark': !isDark, 'translate-x-6 text-primary-lighter bg-primary-darker': isDark }">                
+                  <span class="iconify" x-show="!isDark" data-icon="noto:sun"></span>              
+                  <span class="iconify"  x-show="isDark" data-icon="noto:crescent-moon"></span>                
+                </div>
+              </button>
+              <!-- BOTON NOTIFICACION -->
+              <button
+                @click="openNotificationsPanel(); $nextTick(() => { isMobileSubMenuOpen = false })"
+                class="p-3 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker">
+              <span class="iconify" data-icon="zondicons:notifications"></span>
+              </button>
+              <!-- BOTON BUSQUEDA -->
+              <button
+                @click="openSearchPanel(); $nextTick(() => { $refs.searchInput.focus(); setTimeout(() => {isMobileSubMenuOpen= false}, 100) })"
+                class="p-3 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker">               
+                <span class="iconify" data-icon="fa-solid:search"></span>
+              </button>
+              <!-- BOTON AJUSTES -->
+              <button
+                @click="openSettingsPanel(); $nextTick(() => { isMobileSubMenuOpen = false })"
+                class="p-3 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker">
+                <span class="iconify" data-icon="ion:settings-sharp"></span>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!----------------------- CONTENIDO DE PA PAGINA --------------------------------------------------->
+      <main>
+        <!-- BOTON SUBIR -->
+        <div>
+          <a href="#top">
+            <span style="border: #ffffff 1px solid;" class="ir-arriba icon-arrow-up2 p-1 duration-200 rounded-md  focus:outline-none focus:ring">
+              <span class="iconify" data-icon="bxs:up-arrow" ></span>
+            </span>
+          </a>
+        </div>
+        <div class="flex items-center justify-between px-0 py-0">
+          <h5  id="top" class="font-semibold">  Bienvenido</h5>
+          <a href="./contacto.html" target="_blank"
+            class="name-tagb font-bold px-2 py-2 text-sm text-white rounded-md bg-primary hover:bg-primary-dark focus:outline-none focus:ring focus:ring-primary focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark">
+          Sugerencias y/o Reportes
+          </a>
+        </div>
+        <h6 class="font-semibold"> 
+          <script language='JavaScript' type='text/javascript'>
+            //<![CDATA[
+            today = new Date()
+            if(today.getMinutes() < 0){
+            pad = "0"}
+            else
+            pad = "";
+            document.write ;if((today.getHours() >0) && (today.getHours() <=5)){
+            document.write("¡Buen Día, DIOS Te Bendiga!")
+            }
+            if((today.getHours() >=6) && (today.getHours() <=11)){
+            document.write("¡Buenos Días, DIOS Te Bendiga!")
+            }
+            if((today.getHours() >=12) && (today.getHours() <=18)){
+            document.write("¡Buenas Tardes, DIOS Te Bendiga!")
+            }
+            if((today.getHours() >=19) && (today.getHours() <=23)){
+            document.write("¡Buenas Noches, DIOS Te Bendiga!")
+            }
+            // -->
+            //]]>
+          </script>
+        </h6>
+
+        <section>
+          <div class="sliderw" style="max-width:100%">
+            <img loading="lazy" class="mySlides" src="https://blogger.googleusercontent.com/img/a/AVvXsEgnLRZm8NbpF1LoZe2uX5jkVleZjiVDbBX_BDeqkTSM76MVd2xrzYty3-pKt2EWCtoIJC2rL3R4fdSgMtV5QhLb09aAaNKsgWp7BZNLSaQUCJ8BK_9PKYaxQNKqkILC1aEA2tVaRWimOxl3hU0uQ7qu9WMNGGcu6JM5AmOmVhskJ8wg-NgeDTumis1R=s16000" style="width:120%">
+            <img loading="lazy" class="mySlides" src="https://blogger.googleusercontent.com/img/a/AVvXsEiHWZUCDRfq8TVYjS_lm2ZUCb0cIEHaHj-Hz_cAPYEuwYxo1QRCy1yQV8SztDlVt4DNYUQ0Ju_KQpAVt1_cUcNljdCJYReCW8z_7vFR7qP6qVqadB1px7XD591ZcRpScHyC3l416ItEjt35By3alcsVfJaz-HH-npu22ZNrNOepRf2k7REL3hDgvOgA=s16000" style="width:120%">
+            <img loading="lazy" class="mySlides" src="https://blogger.googleusercontent.com/img/a/AVvXsEj3wvAEaAyXPgzTTiNmbVtyqn48HCwvKAK8dj7fyWdOnVOX8R8HrzwoCz-eLRbAn-2axfqUda0f-6a7yEmUJP7-erCil-0YfMyFWQN_pPxB4psj3CpTWdhGbvg3zl_PlGWUB_FF986xhTpF6-Mt85UrcCrbqj6ICLQkBn7i0zr-EcF6fujU3SaB9ERE=s16000" style="width:120%">
+            <img loading="lazy" class="mySlides" src="https://blogger.googleusercontent.com/img/a/AVvXsEjahEFvCVXLpYkcBHpB067KnkVop5N-fEHnFCYr_RIS0sgGIgR9N0exgBivuUZjFiDvJfK8rvYlXTwwVGp9ucnvTePWUfNVDzsszMM5HqXXTpVJDfl1o65TKyEI5pb6a8NrmC0F27sayyEYVzhBWT_YBWanIUTKJr8vB_uRfDDoh3Rx47x7-lTwK6V2=s16000" style="width:120%">
+            <img loading="lazy" class="mySlides" src="https://blogger.googleusercontent.com/img/a/AVvXsEimiPkCshJxQz77zOTFEaeYDAhEQW8roaEedDtWNp2VQec8UbaQJfhMHjrA85f4FQr7i1-t8SjPpScE5gKmwFXP4WE79H9mfNVHJHfqwlkJlRB73raHb9o0T2P4juMS8gWzesBVJSgQGBIjaUd0ZIBtTs_G-aazbquQmW9zrDAHyZAhU7UODrQR1NFP=s16000" style="width:120%">
+          </div>
+          <div class="textvers font-semibold" >
+            <div class="verstitle font-bold">Texto Del Día:
+            </div>
+            <div class="dailyVerses" id="dailyVersesWrapper">
+            </div>
+            <script async defer src="https://dailyverses.net/get/verse.js?language=rvr60">
+            </script>
+            <script>
+              $('.MiEnlace').click(function() {return false;});
+            </script>
+          </div>
+        </section>
+        <section class="container-az">
+          <div class="az-rows">
+            <div class="grid">
+              <div class="card-az">
+                <div class="item-border">
+                  <div class="icon0 py-1">
+                    <a  href="go:INICIO">
+                      <div  align="center">
+                        <span class="iconify" data-icon="mdi:book-open-page-variant"></span>
+                        <p class="name-tag">Verso Diario</p>
+                       </div>
+                     </a>
+                   </div>
+                  <img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1pL6m2ZV6Bm7tfB4KP2cpE-sQ2R0vYR5zdtf4UUNUVqxzFnfzcYFnGPHIEb1olWd7xSt-pyGJOWIt1ALTEnU-z26RSr73kaVemJ28BBe0Rd9neoB2-srfm3Mnet44RYYuUEyIYnhFR4yvIAjyB-PQsxiXIu1Ryn8lq8I9Ex_raViAjiwHWi2wNkR4/s320/FONDOS%20PARA%20TEL%C3%89FONOS%20(174).gif" class="item-image hover-image">
+                </div>
+              </div><div class="card-az">
+                <div class="item-border">
+                  <div class="icon0 py-1">
+                    <a  href="go:INICIO">
+                      <div  align="center">
+                        <span class="iconify" data-icon="fa6-solid:dove"></span>
+                        <p class="name-tag">Promesas</p>
+                       </div>
+                     </a>
+                   </div>
+                  <img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1pL6m2ZV6Bm7tfB4KP2cpE-sQ2R0vYR5zdtf4UUNUVqxzFnfzcYFnGPHIEb1olWd7xSt-pyGJOWIt1ALTEnU-z26RSr73kaVemJ28BBe0Rd9neoB2-srfm3Mnet44RYYuUEyIYnhFR4yvIAjyB-PQsxiXIu1Ryn8lq8I9Ex_raViAjiwHWi2wNkR4/s320/FONDOS%20PARA%20TEL%C3%89FONOS%20(174).gif" class="item-image hover-image">
+                </div>
+              </div>
+              <div class="card-az">
+                <div class="item-border">
+                  <div class="icon0 py-1">
+                    <a  href="go:INICIO">
+                      <div  align="center">
+                        <span class="iconify" data-icon="ic:baseline-record-voice-over"></span>
+                        <p class="name-tag">Predicas</p>
+                       </div>
+                     </a>
+                   </div>
+                  <img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1pL6m2ZV6Bm7tfB4KP2cpE-sQ2R0vYR5zdtf4UUNUVqxzFnfzcYFnGPHIEb1olWd7xSt-pyGJOWIt1ALTEnU-z26RSr73kaVemJ28BBe0Rd9neoB2-srfm3Mnet44RYYuUEyIYnhFR4yvIAjyB-PQsxiXIu1Ryn8lq8I9Ex_raViAjiwHWi2wNkR4/s320/FONDOS%20PARA%20TEL%C3%89FONOS%20(174).gif" class="item-image hover-image">
+                </div>
+              </div>
+              <div class="card-az">
+                <div class="item-border">
+                  <div class="icon0 py-1">
+                    <a  href="go:INICIO">
+                      <div  align="center">
+                        <span class="iconify" data-icon="bi:music-note-list"></span>
+                        <p class="name-tag">Radios</p>
+                       </div>
+                     </a>
+                   </div>
+                  <img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1pL6m2ZV6Bm7tfB4KP2cpE-sQ2R0vYR5zdtf4UUNUVqxzFnfzcYFnGPHIEb1olWd7xSt-pyGJOWIt1ALTEnU-z26RSr73kaVemJ28BBe0Rd9neoB2-srfm3Mnet44RYYuUEyIYnhFR4yvIAjyB-PQsxiXIu1Ryn8lq8I9Ex_raViAjiwHWi2wNkR4/s320/FONDOS%20PARA%20TEL%C3%89FONOS%20(174).gif" class="item-image hover-image">
+                </div>
+              </div>
+              <div class="card-az">
+                <div class="item-border">
+                  <div class="icon0 py-1">
+                    <a  href="go:INICIO">
+                      <div  align="center">
+                        <span class="iconify" data-icon="wpf:retro-tv"></span>
+                        <p class="name-tag">Canales Tv.</p>
+                       </div>
+                     </a>
+                   </div>
+                  <img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1pL6m2ZV6Bm7tfB4KP2cpE-sQ2R0vYR5zdtf4UUNUVqxzFnfzcYFnGPHIEb1olWd7xSt-pyGJOWIt1ALTEnU-z26RSr73kaVemJ28BBe0Rd9neoB2-srfm3Mnet44RYYuUEyIYnhFR4yvIAjyB-PQsxiXIu1Ryn8lq8I9Ex_raViAjiwHWi2wNkR4/s320/FONDOS%20PARA%20TEL%C3%89FONOS%20(174).gif" class="item-image hover-image">
+                </div>
+              </div>
+              <div class="card-az">
+                <div class="item-border">
+                  <div class="icon0 py-1">
+                    <a  href="go:INICIO">
+                      <div  align="center">
+                        <span class="iconify" data-icon="fa-solid:star"></span>
+                        <p class="name-tag">Zona Kids</p>
+                       </div>
+                     </a>
+                   </div>
+                  <img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1pL6m2ZV6Bm7tfB4KP2cpE-sQ2R0vYR5zdtf4UUNUVqxzFnfzcYFnGPHIEb1olWd7xSt-pyGJOWIt1ALTEnU-z26RSr73kaVemJ28BBe0Rd9neoB2-srfm3Mnet44RYYuUEyIYnhFR4yvIAjyB-PQsxiXIu1Ryn8lq8I9Ex_raViAjiwHWi2wNkR4/s320/FONDOS%20PARA%20TEL%C3%89FONOS%20(174).gif" class="item-image hover-image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <br>
+        <section>
+
+
+
+
+
+
+
+
+
+        <div>
+          <a class="button1 color-azul" href="go:RADIOSP"><span> Radios por Paises </span></a>
+        </div>
+
+        <div class="scrollmenu ">
+          <a href="https://dcristoplay-app.blogspot.com/p/argentina.html"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEhP3TdihaeUolpNh0sM0kOdD70Gf2mTVXZ5lfW1VkK-tFPRZFvPDaVyBvdQZ2S0JnBQn58dG0ikkHiq79JXmX42nQH2WGytRbGuGB4wJtP-hCvkleYnTxHmvZSGng1BC_hfupIS63iVAlz_hth1XXsugn_Y9kN9_DjSNv0-VR8Sc4VrK5E-EYTTfjmr=w200-h200"></h4></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/chile.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEhjCRGNfjnIPizG2FJkJ-fBinY5hXjOcPh-HGw2ESSLYW2z1Pd1GZDVMA-Oerso3HJrbyWc-AJhoaI3s-gsBRJIojw1v8QaWrB4z0BpgIp4_iB5ScOZQojZqmtK4eUDWVosZQPHPbnIAIHgR3z5IxVUnnpiRCSDYHj0F0FB7KLtwG_zbc1aOWZnK9L1=w200-h200"></h3></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/colombia.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEhrNomrnbZRigLogDwXeF_ehzX2nkfdc0WMcAndyOhGUH5y7fn3VOCIN8s5gvMC41hRrLKNOAEOfrSOFyIa-7pKc6YTCDVl9jjBP87z9dVzRakRTb6wER0cOPK2KpF6sJ9T056wEflGXqN_sSsDzrG_zjjl9f-y9A2oRDh5IhLzNnJOUfFcPJMKGzDx=w200-h200"></h3></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/costa-rica.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEh-Jgiwf_ViFVsNbye0Mr7xXIZ_K5Qlb1GIFoHqFNNgVzzieXHo2XNGNs8g5yEyGovoc3Z5vnGLjpqjl--9VFyvDteui4DH3ZempOj9le8uZcnvTk1qfU852tLcROQQEwikYxcEnayDUVdIyhi4HEuzZyzn6oeu49sdji1YNCNHUqE8jJ6qB5kqif9N=w200-h200"></h3></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/el-salvador.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEjhKjoIYl3ZjAqLZsoa5cJKsWfqH5LNC-ssEgwqhBy36RzT0GVDNvcVOsvRwApV1Zyl7_b-BvFM_rQxY9Ykc6DZ0A473Kf3-5RWHSnR777oOSOrIXI6NlVKGxqc_BDgK7mDBTekZwFv6311v1ctthtLfCctR5jeZopAXhw6vot9cbB_nfQo1B5oWnwx=w200-h200"></h3></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/espana.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEhejCNFmFHgdgAhWIm51Qktmk4qL7vd0BqmrSlKhSR4ODOFDEB-rJPIJ_kGStLHPdE6jRXg9wjCJ8svSn4op7kO0ZR5-YUM4xQoe0_MjhJBSg1f_M_5iPeuh6aOeC1cAvSLpGD_sH9vzmMC2-OmgCpkhSYXY1BYtzxf3tAEj0btY_5eRsUcRIPz3EVD=w200-h200"></h3></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/estados-unidos.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEjB14NvGaIr4qDjkVQ_miiSyX-YiFmk7O46MqeizA6QdUlMMxNrh6QvvZvr0AGpc6S4RwjbI6REUQnfHY_gDy010I_coJEiqgFNE_Wm-tKhi-EMHnO58O60_2-idoVFXOHj4sj0DbDUqi_VCYV5MwHbzHSlu4tSbOem_DFgSO2yDyR52hyIgRHcTz-n=w200-h200"></h3></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/guatemala.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEg4dd_V5H2HfFy8h4-KAlDgwZEFeHaS9iRGpDCRdBbia5iXWJf9gALgq8u2KcX25mfK2JEaijzh-8lqKQlEv6bYTinJT1iZonpGv25r_qPKHPifoRaTnUkVx8aI4IigwhZf62PmNmsCftX9Rm3KGXwMC9ah2hZlIqW1KAwpowXhEBhV1RLCNNWBx4S3=w200-h200"></h3></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/honduras.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEjK8Is6M2Oo4NfZLu1DcIO2aLb91JjzblPu55eHP3CXNIdXZxIla8KYL-ageCaok0AoTktCbm2Yu4b1WwJvvguNwxYS5dsXbiPMsYGndfbmeNvAYrfUy1DkXns61cbi1wt1el_UkVLyXksnZqKIq1CUe7MXuvK18B-OK4XHBiqrcvT1dQ4PGSn9vGdN=w200-h200"></h3></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/nicaragua.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEhrQAphjj9rY0GyfbalcJJHje0U11o_pqIpv2O1x2XF_jcwX-b_fLUuu-slpQO8VL9pK_uKPxAuEl3eucv2dM9K_vHAEUGB6UcyBTMwvBN737VsggfSzNfkbyTM3DlYwx9vQSBtb3ZbLSaEvvY3gvhRYALAP5k41IIzMlmD8u78inqiwo16YqE8thnt=w200-h200"></h3></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/panama.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEgnx7irsh9n17aSCc_642Jo9J3Mj19bQEIgiwXC8m5RXHKnao2btUTyL4mWlOk-2D0ruowNixNimCf04nwAccERVqxfi2MlfA4oZHqmSdAlAdpiXLsad21OTiPXu9uVovGsWr5IpbxWy1rn4eAy5GYnYbJqpxRpt8cBj6xJbsSPrjnNxQRdM0jn0oz7=w200-h200"></h3></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/peru.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEiudvV5jQPjWvNV7JgWKrfQg7oWyf7neS1o7decQiMmnci7AQ8sD3rlE4cY-k66BLqUjLYrUGolhYeSbzOJG9hqR71iSd4RHAy_1RqO_DLL08QBECXDrt9PMrrnL2dmEdmGIIvNc9pQ7LmB89pEYwSsu27qrFJRBtWKSXB7ShKOv2SBkTp1LuTTmBcX=w200-h200"></h3></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/puerto-rico.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEhsQmfTV9iNzYyE27jO06u08VwKdBIbBgE4J5k7MiaBECkAawIZtMtGrkXzsl8c39fZkutg-zDfr466BuA6F1N0ISWVG-kIoF2uROGB0_Kh_1yzU28WYlf9Ogn2JyTA1s6mixUOvcyoNVIslcnLZf80xW9OxpXagF5kVFkVpC_j1OlVpeWpANVqC3bH=w200-h200"></h3></div></a>
+          <a href="https://dcristoplay-app.blogspot.com/p/kids.html"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEhLR_ITlxef0rajgSDll3-fpolxraH2FXm0kGjJ98L5wDlC_rRgduHl7vVt_a7Z072pX82h2SUW4A0--Q7vLI0gD4O4Rvu_pMFT6rYs5fFojkCSi83hMNF-Ya5SMeLq0H8knN2YlfIG-Iq9GC9BQFYNFK_vdue1_WkFy_0MPfeb2TW70lHS38fa4SE7=w200-h200"></h3></div></a>
+          <a href="go:RADIOSP"><div class="dark:text-primary-light"><h3><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEhyeF9vUWYLYdGYj9-sXsJAhUGo1m_CYvNC8aZcKB_ZD_ahPeLo8cK0cYo7UNiYqm7PDKvtps0cqzqYtaxTHlxSX24D89bpZ4yB2_e4RrwWPmEYLqBfG3DI6PNuRhGlUUaHMI11CVUMt52xMmL7v7NP-_VGnmAU3zdOhoa4PonuE46WlKkofvaVknNf=w200-h200"></h3></div></a>
+        </div>
+        <br>
+        
+        <div>
+          <a class="button1 color-azul" href="./radios.html"><span> Todas las Radios </span></a>
+        </div>
+
+        <div class="scrollmenu">
+          <a href="./radio/cristovive.html"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEh1inWygfew3yvc1DA-750_9L0uH7diJGRxbJnY9S_CoNIPPAvNgyQ1nixbIB-SKonAL4qmFwduqS4AHj2bj5I8UcwhZqE0kkYM5kVf0YIQytyAtZhMIMY-fsOL-yTWK8aY1QBBUIOdW7YIQix_ddGUqCsNetib2U_F8tfsEjpMQmjwbHeEXRAASREC=w200-h200">Cristo Vive</h4></div></a>
+          <a href="go:RC0003"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEjtCcWX7t2LMfgTNOjNX-Neuwh0QGeo_GfOKFbu1F2ZI4xbaBTPJMNgeByCprKeK0eGpC_GJWZciQsClIc7o8YqM_1EUmLbngw8UU3ogT08JGjEbjZONERHWD9RhNSV8a3YTXRD_TEUOVvQYhlSFCc-tVr_T6kX3NDxmfEJxbkI4xTE1CTlnzveLTwK=w200-h200">Radio Vida</h4></div></a>
+          <a href="go:RC0004"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEh1jrBCVD_BFHJDwBo3NfKZH6eSVtNcf-LzaTOaWpDbEWEAG3p0E5M_-4vEzQrioMSxa0wEEWywTzyfd-_1Pmsso_v0PoqpsKU2yjebfCvl-2pt8lekOksg_6Xzvr9CSxcJ2JG5H-Ju85HTYLMRRxChr34LrER-jo0W0TvIpYDPf7WgqLv4mZ33HCHZ=w200-h200">Bethel Radio</h4></div></a>
+          <a href="go:RC0006"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEjNUfV5SVMD_oPNm3iC45WiyUgOJxzD_rgUbTG1K7JWdtU0LXuW8QDobCTagJia2iEcE-MwqN8MIlzg-A4qcJV_FP7NAlhnyn5Ea7NoLhC06d4USGbaCkB7oEox06Ce438hzIChNWSM2ijE3oVmRFnhJosqRSZUG6h9ufJ_GrKp-HfN4Nn27B-FePSY=w200-h200">Radio Roka</h4></div></a>
+          <a href="go:RC0010"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEjSOZR8Oeq539aQ635L2kni3KA1s-qa6OjAKLxrr5KS1hoAfQ1tFWJJfMTXyR-iwNRw3_CAAhLOL_l-nXr3gb8Oz9yZtIo-CBEmE7WPusQZ6f3Frr8UubTEJT2jiLfb3LJb9cSmgDAm20h6UWY2YiNSytQGby4g9Iwp-DC1HRJZwGz54VFpzUjpZTIv=w200-h200">Radio Bethel</h4></div></a>
+          <a href="go:RC0011"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEiDsqVS8yyFYMadapBYrLNZttgIU6tfIp6m4wDYqn-AIkobsiONY51O6dyPAoX14R04xw5Pm1hugNhetcVwMVbGyR5KWt1QaKpORnIOPOIQ201goE4eDHT9V9kSCqWeaxn5rrJ2CGC_0N_vm84EL3AOpIRsUj6UoKJsGt5nqID4nNOr_NKWCnRaTLFJ=w200-h200">Renovado X Cristo</h4></div></a>
+          <a href="go:RC0012"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEhUHfQpGRxMUhqIogAZuS5nX0HTxYv3zTcM_-tLJd-Gbtb-o0sAgqQNz1Eofj2aWAwDXSBEwf1Jw9IkX1GOUHREicid1Tg3X4a1LuHZCZX7GkvTZGKRr0khOlG2GMHa-78fGenyhCrX1rqoSjfyMk6o9dNnq4hi5_pSYtkkBTUEtRv8OEXMZYz-C3K5=w200-h200">Radio Peniel</h4></div></a>
+          <a href="go:RC0015"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEgjgQZIvfL_evsYNlQXZiUIGhsIo0d7vCfNH-XpCQiC8VtBBVvAuI_KOCf_dqM9kEn1NLforK18AOLSGhYMbYezt2z1f-nXSTaxkvIXeEu933hlDqnEBwGeBSlWeqWZw7DRIHO33P3ogUKNgBB5CA-6Ea7kEacYXyh_0_opGau82oPcH23bIVkClx5Y=w200-h200">Dynamis Radio</h4></div></a>
+          <a href="go:RC0024"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEiyUVWtCa9ebMoRwa-EqHIVqTWeIXiBP4NOzZhrrP53E3DoxUo7cv5-5My4jXsfxzoqO_QYpt2vS9_ANcgv-I8io9Vh_V61wbgs8Vm_i4o6f1Acp1GdRzvqnTyVqP_W-Ki-JIPVjBbA9Q0XkqIIc953KPLF66ZGXFpRN2rf6exqUyKrlrSnysXlf6Vd=w200-h200">Radio Extrema</h4></div></a>
+          <a href="go:RADIOS"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEjPVQR2gj6FgBM_zhgjMZ-Z2S2wlUJEY0nKEB8NuUttNOCRlTbFMlhqkhb4d7HVODXjtXglh4i9YnK_G9nCOdyE7ooxN_rvmVN_VZO8YXMTD_un9ON5h-QkuVjwahdwpWVWVJmPJ9zFOLJ291TOaHXINSevF3oY5oZxIzMbRzzvOzFayyCjlMgBVcOg=w200-h200"></h4></div></a>
+        </div>
+        <br>
+        
+        <div>
+          <a class="button1 color-azul" href="go:TV"><span> Todas los Canales </span></a>
+        </div>
+
+        <div class="scrollmenu">
+          
+          <a href="go:TV0018"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEgu3KIvUHdJBFWtGZA8Wt3Fgaj3ZwlntwB7WpB3YwB0CouR64Q2CPoNO9eM21odFBzUyn6UqLkLMm8D_urgJq7qpG4dzwlioeqB5gabpeb2IFC2ptq2nS4VHWftd8xvODJEuif8M0_5Ee_wEnLXffZM-Oxq3xQWsMWGsq-KNt0ak0JUAJ4l271AyDB7=s16000">Dios Te Ve Kids</h4></div></a>
+          <a href="go:TV0021"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEjU_oYpjzWeRAFZABWuFwBiaUVVC6R704pd5288AH_yPRJyjhyDPQDjb7XsmAdIGbyPEsQ1egNLR85-KvgB4_ycTp2mT7E5JuWX4bldCCoZxLEIQBEzF1rpJARxpX9qooBKB-zHSmh_p1COtWHuN4hEr4KMNFcQedhfhmymRi1AW-Np4Yq5gjkQZpBS=s16000">Logos Tv Kids</h4></div></a>          
+          <a href="go:TV0001"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEiTQPdKnx80i61Z9IVsXmbCXCCTJuW_FmwR4POgTl4wOoozNuLAx5hWqBhA63upDsi46Vp3Nz8y79WR3a--3Mpr-h5e0BbG4nxAkq5pImJ5Cc-dMNT6kKHDttwBqo4p1GK84Uz-aVKfu4eDEROUyNIEX3P3vU-11VKANbC0WgEqlW-SkIvwNFRMyN9x=s16000">Dios Te Ve</h4></div></a>
+          <a href="go:TV0003"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEi-M7-6qGZqZw8pvAhyQp1mIJdDX9PMYiiB1v1cI6dNHan4Fa2iNf-32HhzcxsPHijUMK1sgTW6ppt1nKLhanyltMIRsvzeCbs6vESMAdFOeLe0z5Ud6BXBFOdKsGh90Z8IBMoH_Tu1J13DO3eFgDiEsK42CYGCv8JR4d5LMuHMbJU5HfumJugNslGi=s16000">Elim Tv.</h4></div></a>
+          <a href="go:TV0004"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEiK850L2jemaVNznORNusTL8trfAwKl1NENW-3TVoYKa9dJTAlQ5ZESRoiFWdKmL-K0pljoDH-0GHT0Hdgq78-rdeDblFE1G4wbEMAjp2VNVJTDEBEqgml0FZ7PpjoijQausfAyipvqj5ia2DDSgh2_jmg6b_FLtghwdHvL3x0CNfzE91vFgza8vKti=s16000">TV CRED</h4></div></a>
+          <a href="go:TV0005"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEiXRxjnh5VpeeiIZCsMtjjcUqwkqarrFfietV6y2hJmjBdTPATeqlvOPtYaiVzsekjyStvUSgoEAo8lQWr_03GDilG9Jip0X50Bip4JwSEOTfM9foZMtdH3MAD5PFpT195RCL310e1ghKXzEsFJjxS3gSB3uesAwUaJXkKhfxNYxUteBgtkfwjgQ6xd=s16000">CBN Español</h4></div></a>
+          <a href="go:TV0017"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEg8YyEDCJOzcGDFP05DZBL-NhRisaRcLKxZLV83fG63oN9IoG4xOptwpRjIsyORduVepHKmBHM5LnBdTlXQYJnDfNZrdOu07-3PDNI7kHlKop-PyVW_YZam6yNLBWk_Yxly6HrGd3E4vwcrq9p-2_BG0DCb5lr5r-SHTozCmal3XXjFsNYr2rG2YZtP=s16000">Solidaria Tv. Arg.</h4></div></a>
+          <a href="go:TV0006"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEgydNkRw6p60lRFbi9mXzm3zibeg8nPXFTWfbQ84c3mmFk1VQq9wvmw7i_nZyJRohNSZhmO0lLmDWt22zAYEaMxI3EfjKM4a4UMCH5GYvCWuDfAwbQC4Sy3xP9l3D2iG4v6Vl3yQWzq2Z76qpLueF_ndo2bwLuwiGgxHeGwEu8ENVZc9NejGbCEu0bb=s16000">Solidaria Tv. Esp.</h4></div></a>
+          <a href="go:TV0007"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEj9rIdVb3RlOcRiXcg4yH1I3TN8LXLaTE60i4peZEQCridQAsJRWeNhLlwgFgS2dULNFaw6B3pbXhSLT-B2bvxaqjTb54ENTEb6aFrdoqEheuybFwKK4PPQqUua08fcY52QoBncXoSTEGe2jY_zqiLJeBv_LA5IJXfkqxr6yd-yhdrrMrsa-v_mNF_I=s16000">El Camino Tv.</h4></div></a>
+          <a href="go:TV0008"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEiBvO1KnwD7RXOdYodYXRk5f_0SdJl082Ws2ZYVGnXQjhj0DQRw6sua4iuLhlHR2zoGc7BBRGYj-DG28OZannI0suqWWT_s0oqev8R_4V0ApaSsDN2HybkA29skx2KdVzBifMoty0bk4nAQNZTQVmL5cp-_zWIcuVuOAIWhgjTU1SWsXzLJhkIxeHG3=s16000">Hope Channel I.A.</h4></div></a>
+          <a href="go:TV0009"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEiHGidk2nT4sMd0Wv0UlH8bZZZnaMZFAgkVBqOCDjZdjUmUsVcMndah5jpO2Vd9iaPF38VBzjG9VQNvmjEO3w-wzAgLQr2-PJm8nE2DWmTXxJ0RAaUpU0LjLyC8znouBTWy2cqj67nplaCeh39NQ2S5kRvcar2aYlfFCHSN4a8zQsRjvPn60l3s2Da2=s16000">3ABN Latino</h4></div></a>
+          <a href="go:TV0010"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEjd8s528PgwzACZsH5Nq4Ji2ZjjH3KKgsvFUc20FQQZ3FeQ6UjFKKRFXaRrNyBCCEZjbzGy1BuHMryiFW7lHh1V7XNdanUpk9hAR7J6-5MJFmhBDNWdLxXJreoIQnhlFh0cRjtE106ErLfBxXmG-7bxOSeCD1B0heXenG7Q24nTSu3soDFFwogxXNXI=s16000">JBN Tv.</h4></div></a>
+          <a href="go:TV0011"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEh6xyDhCvWRHtKO6cdLGf0RQIoTp51M6MAQM3W4FzRhjXRsL7b7llYFxRBdLCR-PImBAgXRwa2VodmGCJNQgSqRhruVhX9XcMv6O4lKUV603EK4EiKX11jj2mEV-suG04jtXS1F1bANlJCPmZID7eR6htvP9-km4rRQWiE9g6jAK0ZvybRsDYkUNIj-=s16000">Extrema Tv.</h4></div></a>
+          <a href="go:TV0012"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEjxi1_smYmIPidSnBDBox3i1sd6aMdxiU_spA9l5u3RRN5nkIC8lN2lhQ0-eSwpimiIXlFe1RlXxYvv0rIixpjFVwGFx8mHLwh9gbViOABFxzrtjunLK1_TYsTBjYW4nJJ-PwvCbWrev39pFCOQOX8Rb2OxG3VRqYzytgGkTpMhnQfByNvqAUf7UPpu=s16000">TeleVida</h4></div></a>
+          <a href="go:TV0013"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEgryh_A5eliIurE2zd4Z0ZhJuVMIFHzT366vrNmEoErKVeFE8D2hlfr5cDW9D2Dco_PtF_bXGrlxqtbfDoI8hwjkRCoCAfG5Z7IM-xBnOARPXThNDoUfakaP5cZb4lqTSm_IchL_GT0Sza-lKeHYkhrCv9TbKBBN0hBGI_ipLp1v2fCzrH3SSGTmgI1=s16000">Jehová Tv.</h4></div></a>
+          <a href="go:TV0014"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEjb1DLBaILANf0Nx2kJm9sZiMbuCLzbeTUeyxuSjYJg8voD-ANuQ324AqFq_EJMOiwZMwyi2PCc-t5W8rpZwOgEjzVV-F8GIO_D30FAORoik5KKRbu6Es4bWRXbm2gYek_PDxpAXgIRknfzcpVonEnhirqCIl0xUlL22Gb3EX9rONWXx_MBEfCpNVjM=s16000">Aliento Visión</h4></div></a>
+          <a href="go:TV0015"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEiJ6dHKktlHeyWezZejUupnpDZyYuObkFwjPeIYznklVT3PO_FhYZKcpMSOU_al2tT-7095nJJNGykP3izvQuasl40NL0d6Sq58wwKAS48hGVuuEIsZyEBk9ynpWlQk0RAumPU0Wtjk2GDG1HVr0aLaR1wtrrela6vbZaW9TwJmUd9dqdppAyr7vxxT=s16000">Presencia Tv.</h4></div></a>
+          <a href="go:TV0016"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEhnhASBRlYU1nKWn54JtLVqurka59gz0wYx3w7TrHPMZ4g7UHjVZNuaMXc13Sd3u_8xmxupo-psBQDpXEwigHzB4Hi5A8QnD9cCeu87Cmn3nh8H5VQMgBg7gv3-iWuyM0kv5sNFrosmc8Juo6h3Rbm-IXADfcDTlefbUOXj_KLLj5N57qY7N2125J3F=s16000">Kerygma Tv.</h4></div></a>
+          <a href="go:TV0019"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEioHAD_lZyg-Z-0Gn-riYV3aqsdOJIrJCLNJlPQXIo0u5GOxGSrxpp0nOLDLRxPmQhwKVuhZh0w12jMzFYS6zJxg88IVRHViWwWQ_IacYlTJsLEXYOLyejyPFJjKNKlhyPI1TinIpOLglHxXEBqi9gkW3XpM-dFj5634oPGI-FbDmjUeioU5l7R3onq=s16000">Reforma Tv.</h4></div></a>
+          <a href="go:TV0020"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEhHurcUk09J0GMohlDAYKAg5dR4et3g6TXOL5HgNkMVcanBAglrqs48_HyQdmqWEvAegsW3xUiGF99ZtdJh2aK7QGA3CGyRm4gvDLYEUK61pzpgPIt6HJPfmw6hB0aupU8L1Pyjuqh1rjsVQahI9X3mssZ_7nmR2UI9HMFrJ4Vo5ImikBqyRO9SZBci=s16000">Famili Channel</h4></div></a>
+          <a href="go:TV0025"><div class="dark:text-primary-light"><h4><img loading="lazy" class="az" src="https://blogger.googleusercontent.com/img/a/AVvXsEiY8cEBeSJpxib3w2fqIRvamD6A7d2ihrhn5eLJZQMcAN15eHhl6hq8EF0UB6p3B7D5Z4r3HhV7pl_noQI9Q7s_WNKb_ut0FN_R1QLQpXkTX2y465no2XnxP6RVJvd7HzfBngZvwCQY1w-mRSwDyYM7Qo1XqC5EmLX_XwTQsXf3wOqtGnykC3-cGum9=s16000">Luz Naciente</h4></div></a>
+        </div>
+        <br>
+
+        
+
+
+
+
+
+
+
+          
+        <!-- Content -->
+        <div class="mt-2">
+          <!-- State cards -->
+          <div class="grid grid-cols-1 gap-8 p-4 lg:grid-cols-2 xl:grid-cols-4">
+            <!-- Value card -->
+            <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+              <div>
+                <h6
+                  class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light"
+                >
+                  Value
+                </h6>
+                <span class="text-xl font-semibold">$30,000</span>
+                <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+                  +4.4%
+                </span>
+              </div>
+              <div>
+                <span>
+                  <svg
+                    class="w-12 h-12 text-gray-300 dark:text-primary-dark"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Users card -->
+            <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+              <div>
+                <h6
+                  class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light"
+                >
+                  Users
+                </h6>
+                <span class="text-xl font-semibold">50,021</span>
+                <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+                  +2.6%
+                </span>
+              </div>
+              <div>
+                <span>
+                  <svg
+                    class="w-12 h-12 text-gray-300 dark:text-primary-dark"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Orders card -->
+            <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+              <div>
+                <h6
+                  class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light"
+                >
+                  Orders
+                </h6>
+                <span class="text-xl font-semibold">45,021</span>
+                <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+                  +3.1%
+                </span>
+              </div>
+              <div>
+                <span>
+                  <svg
+                    class="w-12 h-12 text-gray-300 dark:text-primary-dark"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Tickets card -->
+            <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+              <div>
+                <h6
+                  class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light"
+                >
+                  Tickets
+                </h6>
+                <span class="text-xl font-semibold">20,516</span>
+                <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+                  +3.1%
+                </span>
+              </div>
+              <div>
+                <span>
+                  <svg
+                    class="w-12 h-12 text-gray-300 dark:text-primary-dark"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts -->
+
+
+          <!-- Two grid columns -->
+
+        </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+      </main>
+
+      <!-- Main footer -->
+      <center>
+        <footer class="flex items-center justify-center p-4 bg-white border-t dark:bg-darker dark:border-primary-darker">
+          <div><p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> DCRISTO PLAY</p><p>AZEA PROYECTS</p> </div>
+        </footer>
+      </center>
+
+    </div>
+    <!-- INICIO DE LOS PANELES ------>
+    <!-- PANEL MENU ---------------------------------------------------------------------->
+    <!-- PANEL MENU -->
+    <div
+    x-transition:enter="transition duration-300 ease-in-out"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition duration-300 ease-in-out"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    x-show="isMobileMenuOpen"
+    @click="isMobileMenuOpen = false"
+    class="fixed inset-0 z-10 bg-primary-darker"
+    style="opacity: 0.8"
+    aria-hidden="true">
+    </div>
+    <!-- PANEL -->
+    <section
+      x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
+      x-transition:enter-start="-translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="-translate-x-full"
+      x-show="isMobileMenuOpen"
+      @keydown.escape="isMobileMenuOpen = false"
+      class="fixed inset-y-0 z-20 w-full max-w-xs bg-white shadow-xl dark:bg-darker dark:text-light sm:max-w-md focus:outline-none">
+      <!-- CERRAR PANEL DE INICIO  -->
+      <div>        
+        <button @click="isMobileMenuOpen = false"
+        class="p-2 transition-colors duration-200 text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker">
+          <span class="iconify" data-icon="ph:x-bold"></span> 
+        </button>
+        <span class="p-2 transition-colors duration-200 text-primary-lighter font-semibold text-xl">MENU</span>        
+      </div>
+      <!-- PANEL INICIO SUPERIOR -->
+      <div class="flex flex-col h-screen w-full">
+        <div
+          class="relative flex-shrink-0 px-0 py-0 text-gray-400 border-b dark:border-primary-darker dark:focus-within:text-light focus-within:text-gray-700">
+        </div>
+        <br> 
+        <!-- PANEL DE CONTENIDO -->
+        <div class="w-full flex-1 px-2 pb-2 space-y-2 overflow-y-hidden h hover:overflow-y-auto">
+          <!--- INICIO LINK --->
+          <div x-data="{ isActive: true, open: true}">
+            <a
+              href="./index.html"
+              @click="$event.preventDefault(); open = !open"
+              class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-primary-100 dark:hover:bg-primary"
+              :class="{'bg-primary-100 dark:bg-primary': isActive || open}"
+              role="button"
+              aria-haspopup="true"
+              :aria-expanded="(open || isActive) ? 'true' : 'false'">
+            <span class="iconify" data-icon="fa-solid:home"></span>
+            <span class="ml-2 text-sm font-semibold"> Inicio </span>
+            </a>
+            <div role="menu" x-show="open" class="mt-2 space-y-2 px-7" aria-label="Dashboards">                
+            </div>
+          </div>  
+          <!--- PREDICAS LINKS --->
+          <div x-data="{ isActive: false, open: false }">
+            <a
+              href="#"
+              @click="$event.preventDefault(); open = !open"
+              class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-primary-100 dark:hover:bg-primary"
+              :class="{ 'bg-primary-100 dark:bg-primary': isActive || open }"
+              role="button"
+              aria-haspopup="true"
+              :aria-expanded="(open || isActive) ? 'true' : 'false'">
+              <span aria-hidden="true">
+                <span class="iconify" data-icon="ic:baseline-record-voice-over"></span>
+              </span>
+              <span class="ml-2 text-sm font-semibold"> Predicas </span>
+              <span aria-hidden="true" class="ml-auto">
+                <svg class="w-4 h-4 transition-transform transform":class="{ 'rotate-180': open }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg> 
+              </span>
+            </a>
+            <div x-show="open" class="mt-2 space-y-2 px-7" role="menu" arial-label="Components">
+              <a href="#" role="menuitem"class="block p-2 text-gray-700 dark:text-light">
+                Yiye Avila
+              </a>
+              <a href="#" role="menuitem"class="block p-2 text-gray-700 dark:text-light">
+                Yiye Avila
+              </a>
+              <a href="#" role="menuitem"class="block p-2 text-gray-700 dark:text-light">
+                Yiye Avila
+              </a>
+            </div>
+          </div>
+          <!--- RADIOS LINKS --->
+          <div x-data="{ isActive: false, open: false }">
+            <a
+              href="#"
+              @click="$event.preventDefault(); open = !open"
+              class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-primary-100 dark:hover:bg-primary"
+              :class="{ 'bg-primary-100 dark:bg-primary': isActive || open }"
+              role="button"
+              aria-haspopup="true"
+              :aria-expanded="(open || isActive) ? 'true' : 'false'">
+              <span aria-hidden="true">
+                <span class="iconify" data-icon="ic:baseline-record-voice-over"></span>
+              </span>
+              <span class="ml-2 text-sm font-semibold"> Radios Cristianas </span>
+              <span aria-hidden="true" class="ml-auto">
+                <svg class="w-4 h-4 transition-transform transform":class="{ 'rotate-180': open }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg> 
+              </span>
+            </a>
+            <div x-show="open" class="mt-2 space-y-2 px-7" role="menu" arial-label="Components">
+              <a href="#" role="menuitem"class="block p-2 text-gray-700 dark:text-light">
+                Todas
+              </a>
+              <a href="#" role="menuitem"class="block p-2 text-gray-700 dark:text-light">
+                Por Paises
+              </a>
+              <a href="#" role="menuitem"class="block p-2 text-gray-700 dark:text-light">
+                Zona Niños
+              </a>
+            </div>
+          </div>          
+          <br>
+          <br>
+          <!--- FOOTER Y AJUSTES LINKS --->  
+          <div class="text-sm font-semibold">          
+            <div class="modal-footer">
+              <div class="container-footer">
+                <footer>
+                  <div class="redes-footer">
+                    <a href="https://www.facebook.com/DCristoPlay/"><i class="fab fa-facebook-f icon-redes-footer"></i></a>      
+                    <a href="https://t.me/DCristo_Play"><i class="fa fa-paper-plane icon-redes-footer"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp icon-redes-footer"></i></a>
+                    <a href="#"><i class="fab fa-google icon-redes-footer"></i></a>                
+                  </div>              
+                </footer>
+              </div>
+            </div>
+            <button @click="openSettingsPanel"
+              type="button"
+              class="flex items-center justify-center w-full px-4 py-2 text-sm text-white rounded-md bg-primary hover:bg-primary-dark focus:outline-none focus:ring focus:ring-primary-dark focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark">
+              <span aria-hidden="true">
+                <span class="iconify" data-icon="ion:settings-sharp"></span>
+              </span>
+              <span  class="text-sm font-semibold">  AJUSTES  </span>
+            </button>          
+          </div>
+          <br>
+        </div>
+      </div>
+      
+    </section>
+    <!-- PANEL AJUSTES ---------------------------------------------------------------------->
+    <!-- PANEL AJUSTES -->
+    <div
+      x-transition:enter="transition duration-300 ease-in-out"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition duration-300 ease-in-out"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      x-show="isSettingsPanelOpen"
+      @click="isSettingsPanelOpen = false"
+      class="fixed inset-0 z-10 bg-primary-darker"
+      style="opacity: 0.8"
+      aria-hidden="true">
+    </div>
+    <!-- PANEL -->
+    <section
+    x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
+    x-transition:enter-start="-translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="-translate-x-full"
+    x-ref="settingsPanel"
+    x-show="isSettingsPanelOpen"
+    @keydown.escape="isSettingsPanelOpen = false"
+    tabindex="-1"
+    aria-labelledby="notificationPanelLabel"
+    class="fixed inset-y-0 z-20 w-full max-w-xs bg-white dark:bg-darker dark:text-light sm:max-w-md focus:outline-none">
+      <!-- Panel content -->      
+      <div class="flex flex-col h-screen scrollbar" id="style-1">
+        <!-- Panel header -->
+        <div class="flex flex-col border-b dark:border-primary-dark">
+          <!-- CERRAR PANEL AJUSTES -->
+          <div class="border-b dark:border-primary-darker relative aligncenter">        
+            <button @click="isSettingsPanelOpen = false"
+            class="p-2 transition-colors duration-200 text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker">
+              <span class="iconify" data-icon="ph:x-bold"></span> 
+            </button>
+            <span class="p-2 transition-colors duration-200 text-primary-lighter font-semibold text-xl">AJUSTES</span>
+          </div>        
+        </div>
+        <!-- Content -->
+        <center>
+        <div class=" overflow-hidden hover:overflow-y-auto ">
+          <!-- COLOR DE FONDO -->
+          <div>
+            <h6 class="text-lg font-semibold">Modo</h6>
+            <div>
+              <!-- BOTON CLARO -->
+              
+
+              <button aria-hidden="true" class="relative focus:outline-none" x-cloak @click="toggleTheme" >
+                <div class="w-16 h-9 transition rounded-full outline-none bg-primary-100 dark:bg-primary-lighter" style="border: #ffffff 2px solid"></div>
+                <div
+                style="border: #ffffff 2px solid"
+                  class="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-10 transition-all duration-150 transform scale-100 rounded-full shadow-sm"
+                  :class="{ 'translate-x-0 -translate-y-px  bg-white text-primary-dark': !isDark, 'translate-x-6 text-primary-lighter bg-primary-darker': isDark }">                
+                  <span class="iconify" x-show="!isDark" data-icon="noto:sun"></span>              
+                  <span class="iconify"  x-show="isDark" data-icon="noto:crescent-moon"></span>                
+                </div>
+              </button>
+
+            </div>
+          </div>
+          <br>
+          <div class="border-b dark:border-primary-darker"></div>
+          <!-- COLORES VARIABLES DE FONDO -->          
+          <div class="border-b dark:border-primary-darker ">
+            <h6 class="text-lg font-semibold">Colores</h6>
+              <div> 
+                <button @click="setColors('lightblue')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-lightblue);"></button>                
+                <button @click="setColors('blue')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-blue)"></button>
+                <button @click="setColors('cyan')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-cyan)"></button>
+                <button @click="setColors('teal')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-teal)"></button>
+              </div>
+              <div> 
+                <button @click="setColors('yellow')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-yellow)"></button>                
+                <button @click="setColors('lime')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-lime)"></button>
+                <button @click="setColors('light-green')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-light-green)"></button>
+                <button @click="setColors('green')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-green)"></button>
+              </div>
+              <div> 
+                <button @click="setColors('orange')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-orange)"></button>                
+                <button @click="setColors('red')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-red)"></button>
+                <button @click="setColors('pink')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-pink)"></button>
+                <button @click="setColors('purple')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-purple)"></button>
+              </div>
+              <div> 
+                <button @click="setColors('brown')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-brown)"></button>                
+                <button @click="setColors('bluegrey')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-bluegrey)"></button>
+                <button @click="setColors('grey')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-grey)"></button>
+                <button @click="setColors('deeppurple')" class="w-10 h-10 rounded-full" style="border: #ffffff 2px solid; background-color: var(--color-deeppurple)"></button>
+              </div>
+              <br>            
+          </div>        
+        </div>
+        </center>
+      </div>
+    </section>
+    <!-- PANEL NOTIFICACIONES ---------------------------------------------------------------------->
+    <!-- PANEL NOTIFICACIONES -->
+    <div
+      x-transition:enter="transition duration-300 ease-in-out"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition duration-300 ease-in-out"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      x-show="isNotificationsPanelOpen"
+      @click="isNotificationsPanelOpen = false"
+      class="fixed inset-0 z-10 bg-primary-darker"
+      style="opacity: 0.8"
+      aria-hidden="true">
+    </div>
+    <!-- PANEL -->
+    <section
+      x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
+      x-transition:enter-start="-translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="-translate-x-full"
+      x-ref="notificationsPanel"
+      x-show="isNotificationsPanelOpen"
+      @keydown.escape="isNotificationsPanelOpen = false"
+      tabindex="-1"
+      aria-labelledby="notificationPanelLabel"
+      class="fixed inset-y-0 z-20 w-full max-w-xs bg-white dark:bg-darker dark:text-light sm:max-w-md focus:outline-none">
+      <!-- CERRAR PANEL NOTIFICACIONES -->
+      <div class="border-b dark:border-primary-darker relative aligncenter">        
+        <button @click="isNotificationsPanelOpen = false"
+        class="p-2 transition-colors duration-200 text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker">
+          <span class="iconify" data-icon="ph:x-bold"></span> 
+        </button>
+        <span class="p-2 transition-colors duration-200 text-primary-lighter font-semibold text-xl">NOTIFICACIONES</span>
+      </div>
+      <div class="flex flex-col h-screen" x-data="{ activeTabe: 'action' }">        
+        <!-- NOTIFICACIONES -->
+        <div class="flex-shrink-0">
+          <div class="flex items-center justify-between px-4 pt-4 border-b dark:border-primary-darker">
+            <div class="space-x-2">
+              <button
+                @click.prevent="activeTabe = 'action'"
+                class="px-px pb-4 transition-all duration-200 transform translate-y-px border-b focus:outline-none"
+                :class="{'border-primary-dark dark:border-primary': activeTabe == 'action', 'border-transparent': activeTabe != 'action'}">
+                WEB
+              </button>
+              <button onclick="window.location.href='go:INICIO'">App</button>
+            </div>
+          </div>
+        </div>
+        <!-- NOTICIAS-->
+        <div class="flex-1 pt-4 overflow-y-hidden hover:overflow-y-auto scrollbar" id="style-1">
+          <!-- Action tab -->
+          <div class="space-y-4" x-show.transition.in="activeTabe == 'action'">
+            <a href="#" class="block">
+              <div class="flex px-4 space-x-4">
+                <div class="relative flex-shrink-0 ">
+                  <span class="iconify" data-icon="zondicons:notifications"></span>                </div>
+                <div class="flex-1 overflow-hidden">
+                  <h5 class="text-sm font-semibold text-gray-600 dark:text-light"> NOTICIA</h5>
+                  <p class="text-sm font-normal  text-gray-600 dark:text-light"> Nueva Actualizacion de nuestra App </p>
+                  <span class="text-sm font-normal text-gray-400  text-gray-600 dark:text-light"> 15 de Agosto </span>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="block">
+              <div class="flex px-4 space-x-4">
+                <div class="relative flex-shrink-0 ">
+                  <span class="iconify" data-icon="zondicons:notifications"></span>                </div>
+                <div class="flex-1 overflow-hidden">
+                  <h5 class="text-sm font-semibold text-gray-600 dark:text-light"> NOTICIA</h5>
+                  <p class="text-sm font-normal  text-gray-600 dark:text-light"> Nueva Actualizacion de nuestra App </p>
+                  <span class="text-sm font-normal text-gray-400  text-gray-600 dark:text-light"> 15 de Agosto </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- PANEL BUSQUEDA ---------------------------------------------------------------------->
+    <!-- PANEL BUSQUEDA -->
+    <div
+      x-transition:enter="transition duration-300 ease-in-out"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition duration-300 ease-in-out"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      x-show="isSearchPanelOpen"
+      @click="isSearchPanelOpen = false"
+      class="fixed inset-0 z-10 bg-primary-darker"
+      style="opacity: 0.8"
+      aria-hidden="ture"
+    ></div>
+    <!-- PANEL -->
+    <section
+      x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
+      x-transition:enter-start="-translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="-translate-x-full"
+      x-show="isSearchPanelOpen"
+      @keydown.escape="isSearchPanelOpen = false"
+      class="fixed inset-y-0 z-20 w-full max-w-xs bg-white shadow-xl dark:bg-darker dark:text-light sm:max-w-md focus:outline-none">
+      <!-- CERRAR PANEL DE BUSQUEDA  -->
+      <div>        
+        <button @click="isSearchPanelOpen = false"
+        class="p-2 transition-colors duration-200 text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker">
+          <span class="iconify" data-icon="ph:x-bold"></span> 
+        </button>
+        <span class="p-2 transition-colors duration-200 text-primary-lighter font-semibold text-xl">BUSQUEDA</span>
+      </div>
+      <!-- PANEL BUSQUEDA SUPERIOR -->
+      <div class="flex flex-col h-screen">
+        <div
+          class="relative flex-shrink-0 px-0 py-0 text-gray-400 border-b dark:border-primary-darker dark:focus-within:text-light focus-within:text-gray-700">
+        </div>
+        <div
+          class="relative flex-shrink-2 px-2 py-2 text-gray-400  dark:focus-within:text-light focus-within:text-gray-700">
+          <input
+          x-ref="searchInput"
+          list="listamodelos"
+          type="text"
+          id="buscador"
+          class="filtro w-full rounded-full dark:bg-dark border-b dark:border-primary-darker dark:text-light focus:outline-none focus:ring"
+          placeholder="  ¿Qué deseas buscar?"/>
+        </div>
+        <div>
+          <div class="cantidad-de-coincidencias"></div>
+          <h3 class="py-2 text-sm font-semibold text-gray-600 dark:text-light">  Sugerencias</h3>
+        </div>  
+        <!-- PANEL DE CONTENIDO Y RESULTADOS -->
+        <div class="flex-1 px-4 pb-4 space-y-4 overflow-y-hidden h hover:overflow-y-auto scrollbar" id="style-1">
+          <div class="lista">
+            <div class="item" data-categoria="elemento elemento_html">
+              <div class="titulo">Elemento HTML</div>
+              <div class="categoria">
+                <div class="etiqueta">elemento</div>
+                <div class="etiqueta">elemento html</div>
+              </div>
+            </div>
+            <div class="item" data-categoria="caricatura gato">
+              <div class="titulo">Garfield</div>
+              <div class="categoria">
+                <div class="etiqueta">caricatura</div>
+                <div class="etiqueta">gato</div>
+              </div>
+            </div>
+            <div class="item" data-categoria="lenguaje_de_programación funcional">
+              <div class="titulo">JavaScript</div>
+              <div class="categoria">
+                <div class="etiqueta">lenguaje de programación</div>
+                <div class="etiqueta">funcional</div>
+              </div>
+            </div>
+            <br>
+            <br>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- FIN DE LOS PANELES ------>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src='https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.5.x/dist/component.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js'></script><script  src="./script.js"></script>
+
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script  src="./js/script.js"></script>
+</body>
+</html>

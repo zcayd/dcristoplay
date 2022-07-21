@@ -1,0 +1,66 @@
+.zc{
+position: relative;
+display: block;
+border-radius:8px;
+z-index:0;
+transition: transform .2s;
+}
+.zc:hover {
+transform: scale(1.1); 
+-webkit-filter: saturate(200%);
+filter: saturate(200%);
+}
+.cards-movie:hover i{
+-webkit-transform:translate(-50%,-50%);
+transform:translate(-50%,-50%);
+opacity:1;
+}
+.movie-img{
+position:relative;
+overflow:hidden;
+}
+.movie-img h4{
+  margin-top: -15px;
+  
+z-index: 0;
+  }
+
+/*========== Columnas en diferentes tamaños ========================================================================
+====================================================================================================================
+====================================================================================================================*/
+@media screen and (min-width: 50px) {
+.column {
+grid-template-columns: repeat(2,minmax(0,1fr));
+}
+}
+@media screen and (min-width: 300px) {
+.column {
+grid-template-columns: repeat(3,minmax(0,1fr));
+}
+}
+@media screen and (min-width: 600px) {
+.column {
+grid-template-columns: repeat(4,minmax(0,1fr));
+}
+}
+@media screen and (min-width: 800px) {
+.column {
+grid-template-columns: repeat(5,minmax(0,1fr));
+}
+}
+@media screen and (min-width: 1000px) {
+.column {
+grid-template-columns: repeat(6,minmax(0,1fr));
+}
+}
+@media screen and (min-width: 1200px) {
+.column {
+grid-template-columns: repeat(7,minmax(0,1fr));
+}
+}
+@media screen and (min-width: 1400px) {
+  .column {
+  grid-template-columns: repeat(10,minmax(0,1fr));
+  }
+  }
+
