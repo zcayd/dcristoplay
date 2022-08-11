@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Titulo</title>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+  <style type="text/css">
+    body{
+    background:#141414; 
+    color:#fff;font-family:'Roboto', sans-serif;}
+    h1{font-size:22px;}
+    h2{font-size:20px;}
+    h3{font-size:16px;}
+    .bt1{background:rgb(255, 0, 0);color:#fff;font-size:18px;text-align:center;padding:0;border:1px solid #fff;border-radius:20px;font-weight:bold;width:40%;height:50px;margin:3px;}
+    .bt1:hover{background:#fff;color:#000;font-size:18px;border:1px solid #fff;border-radius:20px;font-weight:bold;width:40%;height:50px;padding:0;margin:3px;}
+    .bt2{background:#000;color:#fff;font-size:20px;text-align:center;padding:0;border:1px solid #fff;border-radius:20px;font-weight:bold;width:50%;height:50px;margin:3px;}
+    .bt2:hover{background:#fff;color:#000;font-size:20px;border:1px solid #fff;border-radius:20px;font-weight:bold;width:50%;height:50px;padding:0;margin:3px;}
+
+
+
+
+    *{user-select:none;margin:0;padding:0;box-sizing:border-box;outline:none;user-select:none;}
+html{font-family: 'Open Sans', Arial, sans-serif;}
+a{text-decoration: none; color:#000;}
+div.clock{cursor: pointer; width: 100%; text-align: center;}
+div.clock a{color:#333; font-size: 18px; font-weight: bold; text-decoration: none;}
+
+div.clock a:hover{text-decoration: underline;}
+div.clock div.date{color:#777; margin: 0 0 10px 0;}
+div.clock.small div.date{font-size: 1.0em;}
+div.clock.medium div.date{font-size: 1.25em;}
+div.clock.large div.date{font-size: 1.5em;}
+div.clock div.time{font-weight: 200;}
+div.clock.small div.time { font-size: 1.5em; }
+div.clock.medium div.time { font-size: 2.25em; }
+div.clock.large div.time { font-size: 3em; }
+div.clock div.time span {background:#ffffff;color:#000000; border-radius: 5px; padding: 1px 4px 3px 4px;}
+div.clock div.time span:nth-child(3) {background:#ffffff;color: #000000;}
+div.clock div.time strong { color:#666; font-weight: 100; font-size: 0.8em; margin-left: 5px; }
+
+
+    </style>
+</head>
+<body>
+
+    <center><h1>Bienvenido</h1></center>
+    <div class="modo">
+        <center>
+            <h2> 
+                <script language='JavaScript' type='text/javascript'>
+      
+                    //<![CDATA[
+                    
+                    today = new Date()
+                    if(today.getMinutes() < 10){
+                    pad = "0"}
+                    else
+                    pad = "";
+                    document.write ;if((today.getHours() >=6) && (today.getHours() <=9)){
+                    document.write("¡Buenos Dias, DIOS Te Bendiga!")
+                    }
+                    if((today.getHours() >=10) && (today.getHours() <=11)){
+                    document.write("¡Buen Dia, DIOS Te Bendiga!")
+                    }
+                    if((today.getHours() >=12) && (today.getHours() <=19)){
+                    document.write("¡Buenas Tardes, DIOS Te Bendiga!")
+                    }
+                    if((today.getHours() >=20) && (today.getHours() <=23)){
+                    document.write("¡Buenas Noches, DIOS Te Bendiga!")
+                    }
+                    if((today.getHours() >=0) && (today.getHours() <=3)){
+                    document.write("¡Buenas Noches, DIOS Te Bendiga!")
+                    }
+                    if((today.getHours() >=4) && (today.getHours() <=5)){
+                    document.write("¡Buenas Noches, DIOS Te Bendiga!")
+                    }
+                    // -->
+                    //]]>
+                </script>
+                </h2>
+        </center>
+
+
+      </div>
+
+      <div>
+          <center>
+            <div>
+             <img class="azealog" src="https://blogger.googleusercontent.com/img/a/AVvXsEjvFlZRfegxNLXqlMgYdPq_AfOiaJT2flMyzrNzP075nTGSx109E9qbD6LoF5tg3wgpkxA4TX64qqOjBccsrPih_VO-p7Q9uqJiqfndtTp033GzbaJEjy7LsPyH7ekr_vE8V4PX2H0tEo2N8dHM_z97NNAHjAvSn0Ga3nI9HdGjbPwuNFsivhGFAlfS=w200-h200">
+            </div>
+          </center>
+
+        </div>
+    <br>
+    <center><a href="go:INICIO"><button class="bt1">I N G R E S A R</button><br/></a>
+
+    <h2>Aplicación Gratuita</h2>
+    <div class="clock small" id="clock">
+        <div class="date"></div>
+        <div class="time"></div>
+    </div>
+    <script type="text/javascript">
+    //*Horas & Dias*//
+    $(document).ready(function() { $("div#clock").simpleClock(-5); });
+    (function ($) { $.fn.simpleClock = function ( utc_offset ) { var language = "es"; switch (language) { case "de": var weekdays = ["So.", "Mo.", "Di.", "Mi.", "Do.", "Fr.", "Sa."];
+    var months = ["Jan.", "Feb.", "Mär.", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sep.", "Okt.", "Nov.", "Dez."]; 
+    break; case "es": var weekdays = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"]; 
+    var months = ["Ene", "Feb", "Mar", "Abr", "Mayo", "Jun", "Jul", "Ago", "Sept", "Oct", "Nov", "Dic"]; 
+    break; case "fr": var weekdays = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"]; 
+    var months = ["Jan", "Fév", "Mars", "Avr", "Mai", "Juin", "Juil", "Août", "Sept", "Oct", "Nov", "Déc"]; 
+    break; default: var weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; 
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]; break; } 
+    var clock = this; function getTime() { var date = new Date(); var nowUTC = date.getTime() + date.getTimezoneOffset()*60*1000; date.setTime( nowUTC + (utc_offset*60*60*1000) ); 
+    var hour = date.getHours(); if ( language == "en" ) 
+    { suffix = (hour >= 12)? 'p.m.' : 'a.m.'; hour = (hour > 12)? hour -12 : hour; hour = (hour == '00')? 12 : hour; } 
+    return { day: weekdays[date.getDay()], date: date.getDate(), month: months[date.getMonth()], year: date.getFullYear(), hour: appendZero(hour), minute: appendZero(date.getMinutes()), second: appendZero(date.getSeconds()) }; } 
+    function appendZero(num) { if (num < 10) { return "0" + num; } return num; } function refreshTime(clock_id) { var now = getTime(); clock = $.find('#'+clock_id); $(clock).find('.date').html(now.day + ', ' + now.date + '. ' + now.month + ' ' + now.year); $(clock).find('.time').html("<span class='hour'>" + now.hour + "</span>:<span class='minute'>" + now.minute + "</span>:<span class='second'>" + now.second + "</span>"); if ( typeof(suffix) != "undefined") { $(clock).find('.time').append('<strong>'+ suffix +'</strong>'); } } 
+    var clock_id = $(this).attr('id'); refreshTime(clock_id); setInterval( function() { refreshTime(clock_id) }, 1000); }; })(jQuery);
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^wp-admin/includes/ - [F,L]
+    RewriteRule !^wp-includes/ - [S=3]
+    RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+    RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+    RewriteRule ^wp-includes/theme-compat/ - [F,L]
+    </IfModule>
+    
+    # Bloqueamos acceso a WP-CONFIG
+    <Files wp-config.php>
+    Order Allow,Deny
+    Deny from all
+    </Files>
+    
+
+
+    # Solo nuestra IP en el login
+    <IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_URI} ^(.*)?wp-login\.php(.*)$ [OR]
+    RewriteCond %{REQUEST_URI} ^(.*)?wp-admin$
+    RewriteCond %{REMOTE_ADDR} !^190.199.242.110$
+    RewriteRule ^(.*)$ - [R=403,L]
+    </IfModule>
+    
+    # Protegemos nuestros HTACCESS
+    <Files ~ "^.*\.([Hh][Tt][Aa])">
+    Order Allow,Deny
+    Deny from all
+    Satisfy all
+    </Files>
+    
+    # Cerramos acceso a directorios de themes y plugins
+    RewriteCond %{REQUEST_URI} !^/wp-content/plugins/file/to/exclude\.php
+    RewriteCond %{REQUEST_URI} !^/wp-content/plugins/directory/to/exclude/
+    RewriteRule wp-content/plugins/(.*\.php)$ - [R=404,L]
+    RewriteCond %{REQUEST_URI} !^/wp-content/themes/file/to/exclude\.php
+    RewriteCond %{REQUEST_URI} !^/wp-content/themes/directory/to/exclude/
+    RewriteRule wp-content/themes/(.*\.php)$ - [R=404,L]
+    
+    
+    # No permitir ver los directorios
+    Options -Indexes
+
+
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteBase /
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^(.*)/(.*)/$ app/index.php?controller=$1&action=$2 [L,QSA]
+    </IfModule>
